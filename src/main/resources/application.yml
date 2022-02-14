@@ -1,0 +1,15 @@
+server:
+  port: 8180
+  servlet:
+    context-path: /
+
+spring:
+  thymeleaf:
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: utf-8
+    mode: HTML5
+    suffix: .html
+    prefix: classpath:/templates/

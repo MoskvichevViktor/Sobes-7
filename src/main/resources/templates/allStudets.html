@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All students</title>
+</head>
+<body>
+<h4>Students</h4>
+
+<a href = "newStudent">Add new student</a>
+
+<p>Show student</p>
+<form th:action="@{/}" th:method="get">
+<table th:width="800">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+        <th></th>
+    </tr>
+    <tr th:each="student : ${students}" >
+        <td th:text="${student.id}"/>
+        <td th:text="${student.name}"/>
+        <td th:text="${student.age}"/>
+        <td><a class="ui-button" th:href="@{/deleteStudent(id = ${student.getId()})}">Remove</a></td>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>
